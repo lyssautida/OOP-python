@@ -58,5 +58,29 @@ print(f"Bank Account Balance: {account.check_balance()}")
 
 
 
+print("\nAbstraction eg") #required methods
+from abc import ABC, abstractmethod
 
+class Vehicle(ABC):
 
+    @abstractmethod
+    def turn_on(self):
+        pass
+
+    @abstractmethod
+    def turn_off(self):
+        pass
+
+class Car(Vehicle):
+    def __init__(self) -> None:
+        pass
+
+    def turn_on(self):
+        return "Turned the car on using a key"
+
+    def turn_off(self):
+        return "Turned the car off using a key"
+
+yellow_car = Car()
+print(yellow_car.turn_on())
+print(yellow_car.turn_off())
